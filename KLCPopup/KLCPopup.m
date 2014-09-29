@@ -23,7 +23,7 @@
 
 
 #import "KLCPopup.h"
-
+#import <PureLayout/PureLayout.h>
 static NSInteger const kAnimationOptionCurveIOS7 = (7 << 16);
 
 KLCPopupLayout KLCPopupLayoutMake(KLCPopupHorizontalLayout horizontal, KLCPopupVerticalLayout vertical)
@@ -605,7 +605,7 @@ const KLCPopupLayout KLCPopupLayoutCenter = { KLCPopupHorizontalLayoutCenter, KL
 			if (self.contentView.superview != _containerView) {
 				[_containerView addSubview:self.contentView];
 			}
-			
+			[self.contentView autoCenterInSuperview];
 			// Re-layout (this is needed if the contentView is using autoLayout)
 			[self.contentView layoutIfNeeded];
 			
